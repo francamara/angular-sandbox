@@ -1,0 +1,12 @@
+<div class="http-req-container">
+  <div style="margin-bottom: 15px;">
+    <input matInput type="number" placeholder="Latitude" [(ngModel)]="latitudeValue" >
+    <input matInput type="number" placeholder="Longitude" [(ngModel)]="longitudeValue" >
+  </div>
+    <mat-spinner *ngIf="isLoadingData" style="background-color: white; border-radius: 50%; margin-top: 25%;"></mat-spinner>
+    <h2>Temperature prediction of {{locationDisplayName}}</h2>
+  <div [class.hide]="isLoadingData" style="background-color: white; margin-top: 25px;" >
+    <canvas id="MyChart" width="800px" height="600px"></canvas>
+  </div>
+</div>
+
