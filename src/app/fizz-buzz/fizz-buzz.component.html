@@ -1,0 +1,25 @@
+<div>
+  <div>
+    <h2>Fizz Buzz Calculator</h2>
+    <p>Please enter a number</p>
+  </div>
+  <div>
+    <input type="number" (keyup)="checkValue($event)" [(ngModel)]="userInput" [value]="userInput">
+    <button (click)="calculateFizzBuzz()">Submit</button>
+  </div>
+  <div *ngIf="fizzBuzzResult.length !== 0">
+    <h3>Fizz Buzz Result</h3>
+    <table mat-table [dataSource]="fizzBuzzResult" class="mat-elevation-z8">
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef> Value </th>
+        <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+      </ng-container>
+      <ng-container matColumnDef="result">
+        <th mat-header-cell *matHeaderCellDef> Result </th>
+        <td mat-cell *matCellDef="let element"> {{element.result}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
