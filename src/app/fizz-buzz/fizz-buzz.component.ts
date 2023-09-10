@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {SnackBarService} from '../snack-bar.service';
+import { SnackBarService } from '../services/snack-bar.service';
 
 @Component({
   selector: 'app-fizz-buzz',
