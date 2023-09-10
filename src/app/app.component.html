@@ -1,9 +1,7 @@
-<h1>Welcome to <a style="cursor: pointer;" routerLink="/">Angular Sandbox</a></h1>
-<nav>
-  <a class="button" routerLink="fizz-buzz">FizzBuzz</a>
-  <mat-chip-listbox aria-label="Fish selection">
-    <mat-chip-option routerLink="fizz-buzz">FizzBuzz</mat-chip-option>
-    <mat-chip-option routerLink="todo-list" color="accent">TODO List</mat-chip-option>
-  </mat-chip-listbox>
-</nav>
-<router-outlet></router-outlet>
+<div class="main-container">
+  <h1>Welcome to <a style="cursor: pointer;" routerLink="/">Angular Sandbox</a></h1>
+  <nav class="navbar">
+    <button *ngFor="let link of routerLinks" mat-raised-button class="button" routerLink={{link.link}}>{{link.displayName}}</button>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
